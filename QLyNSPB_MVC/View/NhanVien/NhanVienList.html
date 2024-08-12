@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 >Danh sách nhân viên</h3>
+    <table border='1' width='100%'>
+        <tr>
+            
+            <th>ID nhân viên</th>
+            <th>Họ tên</th>
+            <th>IDPB</th>
+            <th>Địa chỉ</th>
+        </tr>
+        <?php
+       
+        foreach($nhanVienList as $nhanvien) {
+            echo
+            '<tr>
+               
+                <td>' . $nhanvien->IDNV . '</td>  
+                <td>' . $nhanvien->Hoten . '</td>  
+                <td>' . $nhanvien->IDPB . '</td>   
+                <td>' . $nhanvien->Diachi . '</td>   
+            </tr>';
+        }
+        ?>
+    </table>
+    <br>
+    
+</body>
+</html>

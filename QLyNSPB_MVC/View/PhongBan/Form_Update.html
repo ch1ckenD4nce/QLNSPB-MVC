@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Cập nhật phòng ban</h3>
+ 
+        <form action="../Controller/C_PhongBan.php?mod=4&IDPB=' . $phongban->Id_pb . '" method="post">
+            <label for="id">Mã phòng ban:</label>
+            <input type="text" id="id" name="Id_pb" value="<?php echo $phongban->Id_pb;?>"
+             readonly required><br><br>
+            <label for="name">Tên phòng ban:</label>
+            <input type="text" id="name" name="Tenpb" value="<?php echo $phongban->Tenpb; ?>" required><br><br>
+            <label for="mota">Mô tả</label>
+            <input type="text" id="mota" name="Mota" value="<?php echo $phongban->Mota;?>" required><br><br>
+            <input type="hidden" name="update_pb" value="updatepb">
+            <input type="submit" value="Cập nhật ">
+        </form>
+</body>
+</html>

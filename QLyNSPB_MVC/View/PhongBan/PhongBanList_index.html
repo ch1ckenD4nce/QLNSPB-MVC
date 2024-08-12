@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 >Danh sách phòng ban</h3>
+    <table border='1' width='100%'>
+        <tr>
+            <th>ID phòng ban</th>
+            <th>Tên phòng ban</th>
+            <th>Mô tả</th>
+            <th>Thao tác</th>
+        </tr>
+        <?php
+       
+        foreach($phongBanList as $phongban) {
+            echo
+            '<tr>
+                
+                <td>' . $phongban->Id_pb . '</td>  
+                <td>' . $phongban->Tenpb . '</td>  
+                <td>' . $phongban->Mota . '</td>   
+                <td>
+                    <a href="../Controller/C_NhanVien.php?IDPB='. $phongban->Id_pb .'" style="text-decoration: none;">Xem nhân viên</a>
+                   
+                </td>   
+            </tr>';
+        }
+        ?>
+    </table>
+
+    <br>
+    
+    
+</body>
+</html>

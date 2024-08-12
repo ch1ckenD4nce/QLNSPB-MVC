@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+
+    ?>
+    <h3> Thêm phòng ban </h3>
+    <form action="../Controller/C_PhongBan.php?mod=2" name="form_AddPB" method="post">
+
+        <label for="id">IDPB:</label>
+        <input type="text" id="id" name="id" required onblur="checkID()"><br>
+
+        <label for="tenpb">Tên phòng ban:</label>
+        <input type="text" id="tenpb" name="tenpb" required><br>
+
+        <label for="mota">Mô tả:</label>
+        <input type="text" id="mota" name="mota" required><br>
+
+        <!-- Thêm các trường dữ liệu khác cần thiết -->
+
+        <button name="add_pb" type="submit">Thêm phòng ban</button>
+    </form>
+
+</body>
+</html>

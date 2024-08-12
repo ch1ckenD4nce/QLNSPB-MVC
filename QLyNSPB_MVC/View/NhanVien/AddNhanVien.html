@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+
+    ?>
+    <h3> Thêm nhân viên </h3>
+    <form action="../Controller/C_NhanVien.php?mod=2" name="form_AddNV" method="post">
+
+        <label for="idnv">IDNV:</label>
+        <input type="text" id="idnv" name="idnv" required onblur="checkID()"><br><br>
+
+        <label for="hoten">Họ tên:</label>
+        <input type="text" id="hoten" name="hoten" required><br><br>
+
+        
+
+        <label for="idpb">Chọn phòng ban</label>
+                
+                    <select name="idpb" id="">
+                        <?php
+                        for ($i = 0; $i < sizeof($phongbans); $i++) {
+                        ?>
+                        <option value="<?php echo $phongbans[$i]->Id_pb ?>" >
+                            <?php echo $phongbans[$i]->Tenpb ?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select><br><br>
+    
+        <label for="diachi">Địa chỉ:</label>
+        <input type="text" id="diachi" name="diachi" required><br><br><br>
+
+        <!-- Thêm các trường dữ liệu khác cần thiết -->
+
+        <button name="add_nv" type="submit">Thêm nhân viên</button>
+    </form>
+
+</body>
+</html>

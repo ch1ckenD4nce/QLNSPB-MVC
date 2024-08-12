@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 >Quản lí phòng ban</h3>
+    <form action='' method='post'>
+    <table border='1' width='100%'>
+        <tr>
+            <th>Chọn</th>
+            <th>ID phòng ban</th>
+            <th>Tên phòng ban</th>
+            <th>Mô tả</th>
+            <th>Thao tác</th>
+        </tr>
+        <?php
+       
+        foreach($phongBanList as $phongban) {
+            echo
+            '<tr>
+                <td><input type="checkbox" name="deletePB[]" value="'.$phongban->Id_pb.'"></td>  
+                <td>' . $phongban->Id_pb . '</td>  
+                <td>' . $phongban->Tenpb . '</td>  
+                <td>' . $phongban->Mota . '</td>   
+                <td>
+                   <p> <a href="../Controller/C_NhanVien.php?IDPB=' . $phongban->Id_pb . '" style="text-decoration: none;">Xem nhân viên</a></p>
+                   <p> <a href="../Controller/C_NhanVien.php?mod=3&IDPB=' . $phongban->Id_pb . '" style="text-decoration: none;">Thêm nhân viên</a></p> 
+                    <p><a href="../Controller/C_PhongBan.php?mod=4&IDPB=' . $phongban->Id_pb . '" style="text-decoration: none;">Sửa thông tin</a></p>
+                   
+                </td>   
+            </tr>';
+        }
+        ?>
+    </table>
+    <br>
+    <a href="../Controller/C_PhongBan.php?mod=2" style="text-decoration: none;">Thêm phòng ban</a>
+    </form>
+
+    <br>
+
+    
+</body>
+</html>

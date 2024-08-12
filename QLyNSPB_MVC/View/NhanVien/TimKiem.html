@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 align="center">Tìm kiếm nhân viên</h3>
+    <form action="../Controller/C_NhanVien.php?mod=1" method="post">
+        <div style="text-align: center;">
+        <label for="id">ID nhân viên</label>:</label>
+        <input type="radio" id="id" name="option" value="id" checked><br>
+
+        <label for="name">Tên nhân viên:</label>
+        <input type="radio" id="ten" name="option" value="ten"><br>
+
+        <label for="diachi">Địa chỉ:</label>
+        <input type="radio" id="diachi" name="option" value="diachi"><br>
+
+        <div>
+            <input type="text" name="timkiem" placeholder="Nhập từ khóa">
+            <input type="submit" value="Tìm kiếm">
+            
+        </div>
+    </div>
+    
+   
+    <?php if (empty($nhanVienList)): ?>
+        <p>Không có kết quả phù hợp. Dưới đây là danh sách tất cả nhân viên:</p>
+        <table border='1' width='100%'>
+            <tr>
+                <th>ID nhân viên</th>
+                <th>Họ tên</th>
+                <th>IDPB</th>
+                <th>Địa chỉ</th>
+            </tr>
+            <?php
+           
+            foreach($allNhanViens as $nhanvien) {
+                echo
+                '<tr>
+                    
+                    <td>' . $nhanvien->IDNV . '</td>  
+                    <td>' . $nhanvien->Hoten . '</td>  
+                    <td>' . $nhanvien->IDPB . '</td>   
+                    <td>' . $nhanvien->Diachi . '</td>   
+                </tr>';
+            
+            }
+            ?>
+        </table>
+    <?php else: ?>
+        <table border='1' width='100%'>
+        <tr>
+                <th>ID nhân viên</th>
+                <th>Họ tên</th>
+                <th>IDPB</th>
+                <th>Địa chỉ</th>
+            </tr>
+            <?php
+           
+            foreach($nhanVienList as $nhanvien) {
+                echo
+                '<tr>
+                    
+                    <td>' . $nhanvien->IDNV . '</td>  
+                    <td>' . $nhanvien->Hoten . '</td>  
+                    <td>' . $nhanvien->IDPB . '</td>   
+                    <td>' . $nhanvien->Diachi . '</td>   
+                </tr>';
+            
+            }
+            ?>
+        </table>
+    <?php endif; ?>
+
+    <br>
+
+        
+    </form>
+</body>
+</html>

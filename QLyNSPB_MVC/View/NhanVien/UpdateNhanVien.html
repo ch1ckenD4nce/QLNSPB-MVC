@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Xóa nhân viên</h2>
+    <form action="../Controller/C_NhanVien.php?mod=4" method="post">
+        <table border='1' width='100%'>
+        <tr>
+          
+            <th>IDNV</th>
+            <th>Họ Tên</th>
+            <th>IDPB</th>
+            <th>Địa chỉ</th>
+            <th>Cập nhật</th>
+        </tr>
+
+        <?php
+            
+            foreach ($nhanVienList as $nhanVien) {
+                echo '<tr>
+                        
+                        <td>' . $nhanVien->IDNV . '</td>  
+                        <td>' . $nhanVien->Hoten . '</td>  
+                        <td>' . $nhanVien->IDPB . '</td>  
+                        <td>' . $nhanVien->Diachi . '</td>  
+                        <td><a href="?mod=4&id='.$nhanVien->IDNV.'">Cập nhật</a></td>  
+
+                    
+                    </tr>';
+                
+            }
+            ?>
+    </table>
+    <br>
+ 
+</form>
+</body>
+</html>

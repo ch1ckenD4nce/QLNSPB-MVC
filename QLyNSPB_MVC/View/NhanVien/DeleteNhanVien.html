@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Xóa nhân viên</h2>
+    <form action="../Controller/C_NhanVien.php?mod=3" method="post">
+        <table border='1' width='100%'>
+        <tr>
+          
+            <th>IDNV</th>
+            <th>Họ Tên</th>
+            <th>IDPB</th>
+            <th>Địa chỉ</th>
+            <th>Delete</th>
+        </tr>
+
+        <?php
+            
+            foreach ($nhanVienList as $nhanVien) {
+                echo '<tr>
+                        
+                        <td>' . $nhanVien->IDNV . '</td>  
+                        <td>' . $nhanVien->Hoten . '</td>  
+                        <td>' . $nhanVien->IDPB . '</td>  
+                        <td>' . $nhanVien->Diachi . '</td>  
+                        <td><input type="checkbox" name="delete[]" value="'.$nhanVien->IDNV.'"></td>  
+
+                    
+                    </tr>';
+                
+            }
+            ?>
+    </table>
+    <br>
+    <input type="submit" value="Delete">
+ 
+</form>
+</body>
+</html>
